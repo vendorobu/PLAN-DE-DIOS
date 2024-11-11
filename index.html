@@ -108,13 +108,21 @@
             <div class="plan-item">
                 <input type="checkbox" id="item24">
                 <label for="item24">Ejemplo de objetivo 24</label>
-                <div
-                    
+            </div>
+
             <!-- Botón para borrar -->
             <button type="button" class="clear-btn" onclick="clearCheckboxes()">Borrar todas las marcas</button>
         </form>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        // Función para borrar las marcas de las casillas de verificación
+        function clearCheckboxes() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+        }
+    </script>
 </body>
 </html>
-
