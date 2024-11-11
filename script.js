@@ -1,12 +1,8 @@
-function clearCheckboxes() {
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    checkboxes.forEach(checkbox => checkbox.checked = false);
-}
-// Función que guarda el estado de todos los checkboxes en LocalStorage
+// Función que guarda el estado de los checkboxes en LocalStorage
 function saveCheckboxes() {
     const checkboxes = document.querySelectorAll('.plan-item input[type="checkbox"]');
     checkboxes.forEach((checkbox, index) => {
-        localStorage.setItem('checkbox_' + index, checkbox.checked); // Guardamos el estado de cada checkbox
+        localStorage.setItem('checkbox_' + index, checkbox.checked);
     });
 }
 
@@ -21,25 +17,29 @@ function loadCheckboxes() {
     });
 }
 
-// Llamar a la función loadCheckboxes cuando se cargue la página
-document.addEventListener('DOMContentLoaded', loadCheckboxes);
-
-// Guardar el estado cada vez que cambie un checkbox
-document.querySelectorAll('.plan-item input[type="checkbox"]').forEach((checkbox) => {
-    checkbox.addEventListener('change', saveCheckboxes);
-});
 // Función que borra todas las marcas y limpia el LocalStorage
 function clearCheckboxes() {
     const checkboxes = document.querySelectorAll('.plan-item input[type="checkbox"]');
     checkboxes.forEach((checkbox) => {
-        checkbox.checked = false; // Desmarcar todos los checkboxes
+        checkbox.checked = false;
     });
-
-    // Limpiar el LocalStorage
-    for (let i = 0; i < checkboxes.length; i++) {
-        localStorage.removeItem('checkbox_' + i); // Borrar el estado del checkbox en LocalStorage
-    }
+    checkboxes.forEach((_, index) => {
+        localStorage.removeItem('checkbox_' + index);
+    });
 }
 
-// Añadir evento al botón de borrar
-document.querySelector('.clear-btn').addEventListener('click', clearCheckboxes);
+// Ejecutar cuando la página esté completamente cargada
+window.onload = function() {
+    loadCheckboxes();
+
+    // Añadir evento para guardar el estado cada vez que cambie un checkbox
+    document.querySelectorAll('.plan-item input[type="checkbox"]').forEach((checkbox) => {
+        checkbox.addEventListener('change', saveCheckboxes);
+    });
+
+    // Añadir evento al botón de borrar
+    const clearButton = document.querySelector('.clear-btn');
+    if (clearButton) {
+        clearButton.addEventListener('click', clearCheckboxes);
+    }
+};
