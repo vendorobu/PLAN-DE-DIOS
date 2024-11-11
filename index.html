@@ -11,117 +11,129 @@
         <header>
             <h1>Plan de Vida</h1>
         </header>
+
+        <!-- Botones para alternar entre secciones -->
+        <div class="buttons">
+            <button class="tab-btn" id="dailyBtn" onclick="showContent('dailyContent')">Diario</button>
+            <button class="tab-btn" id="weeklyBtn" onclick="showContent('weeklyContent')">Semanal</button>
+            <button class="tab-btn" id="monthlyBtn" onclick="showContent('monthlyContent')">Mensual</button>
+        </div>
+
+        <!-- Contenido para cada pestaña -->
         <form id="planForm">
-            <!-- Casillas de verificación -->
-            <div class="plan-item">
-                <input type="checkbox" id="item1">
-                <label for="item1">Minuto Heroico</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item2">
-                <label for="item2">Primer Pensamiento</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item3">
-                <label for="item3">Ofrecimiento de Obras</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item4">
-                <label for="item4">Oración de la Mañana</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item5">
-                <label for="item5">Santa Misa</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item6">
-                <label for="item6">Comunión</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item7">
-                <label for="item7">Trium Puerorum</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item8">
-                <label for="item8">Pro Pontífice</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item9">
-                <label for="item9">Pro Patre</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item10">
-                <label for="item10">Pro Antístite</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item11">
-                <label for="item11">Intención Mensual</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item12">
-                <label for="item12">Ángelus</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item13">
-                <label for="item13">Examen Particular</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item14">
-                <label for="item14">Visita al Santísimo</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item15">
-                <label for="item15">Santo Rosario</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item16">
-                <label for="item16">Contemplación del Rosario</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item17">
-                <label for="item17">Lectura del Evangelio</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item18">
-                <label for="item18">Lectura Espiritual</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item19">
-                <label for="item19">Oracion-Tarde</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item20">
-                <label for="item20">Comentario Evangelio</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item21">
-                <label for="item21">Examen General</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item22">
-                <label for="item22">Avemarías de Pureza</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item23">
-                <label for="item23">Agua Bendita</label>
-            </div>
-            <div class="plan-item">
-                <input type="checkbox" id="item24">
-                <label for="item24">Último Pensamiento</label>
+            <div id="dailyContent" class="content-section active">
+                <!-- Casillas de verificación - Diario -->
+                <div class="plan-item">
+                    <input type="checkbox" id="item1">
+                    <label for="item1">Minuto Heroico</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item2">
+                    <label for="item2">Primer Pensamiento</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item3">
+                    <label for="item3">Ofrecimiento de Obras</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item4">
+                    <label for="item4">Oración de la Mañana</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item5">
+                    <label for="item5">Santa Misa</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item6">
+                    <label for="item6">Comunión</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item7">
+                    <label for="item7">Trium Puerorum</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item8">
+                    <label for="item8">Pro Pontífice</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item9">
+                    <label for="item9">Pro Patre</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item10">
+                    <label for="item10">Pro Antístite</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item11">
+                    <label for="item11">Intención Mensual</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item12">
+                    <label for="item12">Ángelus</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item13">
+                    <label for="item13">Examen Particular</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item14">
+                    <label for="item14">Visita al Santísimo</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item15">
+                    <label for="item15">Santo Rosario</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item16">
+                    <label for="item16">Contemplación del Rosario</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item17">
+                    <label for="item17">Lectura del Evangelio</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item18">
+                    <label for="item18">Lectura Espiritual</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item19">
+                    <label for="item19">Oracion-Tarde</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item20">
+                    <label for="item20">Comentario Evangelio</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item21">
+                    <label for="item21">Examen General</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item22">
+                    <label for="item22">Avemarías de Pureza</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item23">
+                    <label for="item23">Agua Bendita</label>
+                </div>
+                <div class="plan-item">
+                    <input type="checkbox" id="item24">
+                    <label for="item24">Último Pensamiento</label>
+                </div>
             </div>
 
-            <!-- Botón para borrar -->
+            <div id="weeklyContent" class="content-section">
+                <!-- Contenido Semanal -->
+                <p>Contenido para la semana</p>
+            </div>
+            <div id="monthlyContent" class="content-section">
+                <!-- Contenido Mensual -->
+                <p>Contenido para el mes</p>
+            </div>
+
+            <!-- Botón para borrar checkboxes -->
             <button type="button" class="clear-btn" onclick="clearCheckboxes()">Borrar todas</button>
         </form>
     </div>
-    <script>
-        // Función para borrar las marcas de las casillas de verificación
-        function clearCheckboxes() {
-            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            checkboxes.forEach(checkbox => {
-                checkbox.checked = false;
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
