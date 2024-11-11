@@ -62,12 +62,14 @@ label {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
+    font-size: 15px; /* Ajustar tamaño de la fuente para que no sea tan grande */
+    margin-top: 15px; /* Espacio reducido entre el formulario y el botón */
     text-align: center;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease-in-out;
+    box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total */
 }
 
+/* Efecto hover más suave para el botón */
 .clear-btn:hover {
     background-color: #ff3333;
 }
@@ -83,4 +85,19 @@ label {
     }
 
     /* Cambiar el formulario a una sola columna */
-    form
+    form {
+        grid-template-columns: 1fr; /* Una columna en dispositivos pequeños */
+    }
+
+    /* Ajustar el tamaño de los checkboxes para pantallas pequeñas */
+    .plan-item input[type="checkbox"] {
+        transform: scale(1.2); /* Reducir ligeramente el tamaño de los checkboxes */
+    }
+
+    /* Ajustar el tamaño del botón en móviles */
+    .clear-btn {
+        font-size: 14px; /* Reducir el tamaño del texto del botón en móviles */
+        padding: 10px; /* Menos padding para hacerlo más compacto */
+        margin-top: 10px; /* Menos margen superior */
+    }
+}
