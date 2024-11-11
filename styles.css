@@ -16,7 +16,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 900px; /* Aumenté el ancho máximo */
+    max-width: 900px; /* Ajustado el tamaño máximo */
     width: 100%;
     overflow-y: auto;
     max-height: 90vh;
@@ -83,21 +83,4 @@ label {
     }
 
     /* Cambiar el formulario a una sola columna */
-    form {
-        grid-template-columns: 1fr;
-    }
-
-    /* Ajustar tamaño y padding del botón en móviles */
-    .clear-btn {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .plan-item label {
-        font-size: 1rem; /* Reducir el tamaño de las etiquetas */
-    }
-
-    .plan-item input[type="checkbox"] {
-        transform: scale(1.2); /* Reducir el tamaño de los checkboxes */
-    }
-}
+    form
