@@ -28,6 +28,32 @@ function clearCheckboxes() {
     });
 }
 
+// Función para mostrar el contenido de la pestaña seleccionada
+function showContent(contentId) {
+    // Ocultar todas las secciones de contenido
+    const contentSections = document.querySelectorAll('.content-section');
+    contentSections.forEach((section) => {
+        section.classList.remove('active');
+    });
+
+    // Mostrar la sección seleccionada
+    const activeContent = document.getElementById(contentId);
+    if (activeContent) {
+        activeContent.classList.add('active');
+    }
+
+    // Cambiar la clase activa en los botones
+    const buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach((button) => {
+        button.classList.remove('active');
+    });
+
+    const activeButton = document.getElementById(contentId.replace('Content', 'Btn'));
+    if (activeButton) {
+        activeButton.classList.add('active');
+    }
+}
+
 // Ejecutar cuando la página esté completamente cargada
 window.onload = function() {
     loadCheckboxes();
@@ -42,4 +68,7 @@ window.onload = function() {
     if (clearButton) {
         clearButton.addEventListener('click', clearCheckboxes);
     }
+
+    // Mostrar el contenido por defecto (por ejemplo, Diario)
+    showContent('dailyContent');
 };
