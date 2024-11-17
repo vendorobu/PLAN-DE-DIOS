@@ -15,7 +15,7 @@
         <!-- Botones para alternar entre secciones -->
         <div class="buttons">
             <button class="tab-btn" id="dailyBtn" onclick="showContent('dailyContent')">Diario</button>
-            <button class="tab-btn" id="weeklyBtn" onclick="showContent('weeklyContent')">Siempre</button>
+            <button class="tab-btn" id="weeklyBtn" onclick="showContent('alwaysContent')">Siempre</button>
             <button class="tab-btn" id="weeklyBtn" onclick="showContent('weeklyContent')">Semanal</button>
             <button class="tab-btn" id="monthlyBtn" onclick="showContent('monthlyContent')">Mensual</button>
         </div>
@@ -122,7 +122,7 @@
                 </div>
             </div>
 
-            <div id="weeklyContent" class="content-section">
+            <div id="alwaysContent" class="content-section">
                 <!-- Contenido SIEMPRE -->
                   <div class="plan-item">
                     <input type="checkbox" id="item1">
@@ -225,6 +225,11 @@
                     <label for="item25">Crucifijo de bolsillo</label>
                 </div>
             </div>
+            
+            <div id="weeklyContent" class="content-section">
+                <!-- Contenido Semanal -->
+            </div>
+            
             <div id="monthlyContent" class="content-section">
                 <!-- Contenido Mensual -->
             </div>
