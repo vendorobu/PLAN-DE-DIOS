@@ -46,6 +46,7 @@ header h1 {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
     font-size: 1.1rem;
+    text-align: center;
 }
 
 /* Botón activo */
@@ -131,7 +132,7 @@ label {
     /* Ajustar los botones en dispositivos móviles */
     .buttons {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr 1fr 1fr; /* Tres columnas en móviles */
         gap: 10px; /* Espaciado entre los botones */
         margin: 20px 0; /* Margen superior e inferior */
     }
