@@ -31,8 +31,8 @@ header h1 {
 
 /* Botones de pestañas */
 .buttons {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
     gap: 10px;
     margin: 20px 0;
 }
@@ -126,26 +126,29 @@ label {
 
     form {
         grid-template-columns: 1fr;
-   
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px; /* Espaciado entre los botones */
-    margin: 20px 0; /* Margen superior e inferior */
-}
+    }
 
-.tab-btn {
-    padding: 10px 15px;
-    font-size: 16px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    transition: background-color 0.3s;
-}
+    /* Ajustar los botones en dispositivos móviles */
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px; /* Espaciado entre los botones */
+        margin: 20px 0; /* Margen superior e inferior */
+    }
 
-.tab-btn:hover {
-    background-color: #0056b3;
+    .tab-btn {
+        padding: 10px 15px;
+        font-size: 16px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        transition: background-color 0.3s;
+    }
+
+    .tab-btn:hover {
+        background-color: #0056b3;
+    }
 }
