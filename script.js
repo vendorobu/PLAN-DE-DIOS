@@ -73,3 +73,4 @@ window.onload = function() {
     // Mostrar el contenido por defecto (por ejemplo, Diario)
     showContent('dailyContent');
 };
+
