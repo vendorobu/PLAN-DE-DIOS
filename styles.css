@@ -55,14 +55,6 @@ label {
     color: #333;
 }
 
-/* Contenedor del botón de borrar */
-.clear-btn-container {
-    grid-column: span 2;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
 /* Botón de borrar */
 .clear-btn {
     padding: 10px 20px;
@@ -72,8 +64,11 @@ label {
     border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
+    margin-top: 20px;
+    text-align: center;
     transition: background-color 0.3s ease-in-out;
     box-sizing: border-box;
+    align-self: center;
     width: auto;
 }
 
@@ -89,3 +84,17 @@ label {
         padding: 10px;
     }
 
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    .clear-btn {
+        font-size: 0.875rem;
+        padding: 8px 16px;
+        width: 100%;
+    }
+}
