@@ -48,7 +48,8 @@ function showContent(contentId) {
         button.classList.remove('active');
     });
 
-    const activeButton = document.getElementById(contentId.replace('Content', 'Btn'));
+    // Aplicar clase activa al botón que invocó la función
+    const activeButton = document.querySelector(`.tab-btn[onclick="showContent('${contentId}')"]`);
     if (activeButton) {
         activeButton.classList.add('active');
     }
