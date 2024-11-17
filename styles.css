@@ -6,7 +6,7 @@ body {
     padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Alineación hacia la parte superior */
     height: 100vh;
     box-sizing: border-box;
 }
@@ -20,6 +20,9 @@ body {
     width: 100%;
     overflow-y: auto;
     max-height: 90vh;
+    display: flex;
+    flex-direction: column; /* Esto asegura que los elementos dentro del contenedor se apilen */
+    justify-content: space-between; /* Espaciado entre los elementos dentro del contenedor */
 }
 
 header h1 {
@@ -96,19 +99,19 @@ label {
 
 /* Botón de borrar */
 .clear-btn {
-    display: block;
-    width: 100%;
-    padding: 12px;
+    width: auto;
+    padding: 8px 16px; /* Botón pequeño */
     background-color: #ff4c4c;
     color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 15px;
-    margin-top: 15px;
+    font-size: 14px;
+    margin-top: 20px;
     text-align: center;
     transition: background-color 0.3s ease-in-out;
     box-sizing: border-box;
+    align-self: center; /* Para centrarlo en la parte inferior */
 }
 
 .clear-btn:hover {
@@ -129,12 +132,11 @@ label {
         grid-template-columns: 1fr;
     }
 
-    /* Ajustar los botones en dispositivos móviles */
     .buttons {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr; /* Tres columnas en móviles */
-        gap: 10px; /* Espaciado entre los botones */
-        margin: 20px 0; /* Margen superior e inferior */
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        margin: 20px 0;
     }
 
     .tab-btn {
