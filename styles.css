@@ -1,7 +1,9 @@
-/* Estilos generales */
+/* =======================
+   ESTILOS GENERALES
+======================= */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #4e73df, #1cc88a);
     margin: 0;
     padding: 20px;
     display: flex;
@@ -11,81 +13,111 @@ body {
     box-sizing: border-box;
 }
 
+/* Contenedor */
 .container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.92);
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     max-width: 900px;
     width: 100%;
     overflow-y: auto;
     max-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    position: relative;
+    animation: floatUp 0.6s ease-out;
+    backdrop-filter: blur(8px);
 }
 
+/* Animación de entrada */
+@keyframes floatUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =======================
+      TÍTULOS
+======================= */
 header h1 {
     margin-top: 0;
-    color: #333;
+    color: #222;
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2.7rem;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
-/* Botones de pestañas */
+/* =======================
+      BOTONES DE TABS
+======================= */
 .buttons {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
-    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
     margin: 20px 0;
 }
 
 .tab-btn {
-    padding: 10px 20px;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
-    background-color: #ddd; /* Gris claro */
+    border-radius: 8px;
+    background: #e9ecef;
     color: #333;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
     font-size: 1.1rem;
-    text-align: center;
+    font-weight: 600;
+    transition: 0.3s ease;
 }
 
-/* Botón activo */
+/* Hover suave */
+.tab-btn:hover {
+    background: #ced4da;
+    transform: translateY(-2px);
+}
+
+/* Activo */
 .tab-btn.active {
-    background-color: #333; /* Negro */
-    color: #fff; /* Texto blanco cuando está activo */
-    animation: fadeIn 0.5s;
+    background: #343a40;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* Animación de transición */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Secciones de contenido */
+/* =======================
+     CONTENIDO
+======================= */
 .content-section {
     display: none;
-    margin-top: 20px;
+    animation: fadeIn 0.4s ease;
 }
 
 .content-section.active {
     display: block;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* =======================
+      FORMULARIO
+======================= */
 form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
-    margin-top: 20px;
 }
 
 .plan-item {
     display: flex;
     align-items: center;
+    padding: 10px;
+    background: #f1f3f5;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.plan-item:hover {
+    background: #e9ecef;
 }
 
 .plan-item input[type="checkbox"] {
@@ -95,79 +127,51 @@ form {
 
 label {
     font-size: 1.1rem;
-    color: #333;
+    color: #222;
+    font-weight: 500;
 }
 
-/* Botón de borrar */
+/* =======================
+      BOTÓN BORRAR
+======================= */
 .clear-btn {
-    padding: 8px 16px; /* Tamaño pequeño */
-    background-color: #ff4c4c;
-    color: #fff;
+    padding: 10px 20px;
+    background: #ff4c4c;
+    color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 14px;
-    margin-top: 20px;
-    text-align: center;
-    transition: background-color 0.3s ease-in-out;
-    box-sizing: border-box;
+    font-size: 15px;
+    margin-top: 25px;
     align-self: center;
-    width: auto; /* Evita que ocupe toda la pantalla */
-    position: relative;
+    transition: 0.3s ease;
 }
 
-/* Cambio de color al pasar el ratón */
 .clear-btn:hover {
-    background-color: #ff3333;
+    background: #ff1f1f;
+    transform: scale(1.07);
 }
 
-/* Responsividad */
+/* =======================
+      RESPONSIVO
+======================= */
 @media (max-width: 600px) {
-    .container {
-        padding: 10px;
-    }
+    .container { padding: 15px; }
 
     header h1 {
-        font-size: 2rem;
+        font-size: 2.1rem;
     }
 
     form {
         grid-template-columns: 1fr;
     }
 
-    .buttons {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 10px;
-        margin: 20px 0;
-    }
-
     .tab-btn {
-        padding: 10px 15px;
-        font-size: 16px;
-        background-color: #ddd; /* Gris claro */
-        color: #333;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        text-align: center;
-        transition: background-color 0.3s;
+        font-size: 1rem;
+        padding: 10px;
     }
 
-    .tab-btn:hover {
-        background-color: #0056b3;
-    }
-
-    .tab-btn.active {
-        background-color: #333; /* Negro */
-        color: #fff;
-    }
-
-    /* Estilo para el botón borrar en móvil */
     .clear-btn {
         width: auto;
-        font-size: 14px;  /* Mantener el tamaño pequeño */
-        padding: 8px 16px;
-        margin-top: 20px;
     }
 }
